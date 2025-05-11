@@ -1,66 +1,75 @@
-##  here my streamlit --->  https://abdullah0altuwayjiri.streamlit.app/
-The provided code appears to be a comprehensive cleaning and analysis script for a dataset about job postings in Saudi Arabia. Here's a breakdown of the key aspects:
+# Saudi Arabia Job Postings Analysis
 
-**Data Loading and Exploration:**
+![Project Banner](job.jpeg)
 
-1. Libraries are imported: `numpy`, `pandas`, `matplotlib.pyplot`, `seaborn`, `scipy.stats`, `dtale`, `sweetviz`, `plotly.express`, and `plotly.graph_objects`.
-2. `%matplotlib inline` ensures visualizations render within the Jupyter Notebook.
-3. The data is loaded from a CSV file using `pd.read_csv`.
-4. Basic data exploration using `df.shape` and `df.head` reveals the dataset size and initial observations.
+## 📋 Overview
+An interactive data analysis application that provides insights into the Saudi Arabian job market using data collected from Jadarat. This tool helps job seekers understand regional job distribution, salary expectations, and market trends.
 
-**Data Profiling:**
+## ✨ Features
+- **Regional Analysis**: Visualize job posting distribution across Saudi regions
+- **Salary Insights**: Explore salary ranges for fresh graduates
+- **Interactive Dashboard**: User-friendly Streamlit interface for data exploration
+- **Emotional Support**: Integrated resources for job seekers
 
-1. Data profiling is performed using `dtale.show` to get a quick overview of data types, missing values, and distributions.
-2. The script acknowledges the need for separate profiling approaches for categorical and numerical variables.
+## 🛠️ Technologies
+- **Python**: Core programming language
+- **Streamlit**: Web application framework
+- **Pandas**: Data manipulation and analysis
+- **Matplotlib/Seaborn**: Data visualization (used for creating the charts)
 
-**Data Quality Checks:**
+## 📊 Key Insights
 
-1. The script highlights the importance of data quality checks, including:
-    - Reliability (source and collection process)
-    - Timeliness (data being up-to-date)
-    - Consistency (data consistency within and across sources)
-    - Relevance (data alignment with analysis objectives)
-    - Uniqueness (handling duplicate records)
-    - Completeness (checking for missing values)
-    - Accuracy (data correctness and precision)
+### Regional Job Distribution
+Riyadh dominates the job market with the highest number of postings in the Kingdom, significantly outpacing other regions including Makkah. This reflects the capital's position as the economic center of Saudi Arabia.
 
-**Data Cleaning:**
+![Regional Distribution](Q1.png)
 
-1. The script demonstrates cleaning steps based on data profiling results:
-    - Removing irrelevant columns (`comp_no` and `job_post_id`)
-    - Removing duplicates using `df.drop_duplicates`
-    - Handling missing values using:
-        - Identifying missing values with `df.isnull().sum()`
-        - Dropping rows with irrelevant text in `job_date`
-        - Dropping rows with missing values using `df.dropna`
-    - Checking data types and converting appropriate columns:
-        - Extracting salary value from `benefits` and changing it to float
-        - Splitting `positions` into `open_positions` and `total_positions` (int)
-        - Extracting years from `exper` and changing it to int
+### Fresh Graduate Salaries
+Our analysis reveals encouraging salary data for new graduates entering the job market, providing realistic expectations for job seekers.
 
-**Outlier Detection (placeholder):**
+![Salary Data](Q3.png)
 
-1. The script acknowledges the need for outlier detection using various methods:
-    - Univariate graphical analysis (box plots, histograms, scatter plots)
-    - Univariate non-graphical analysis (IQR, z-scores)
-2. It includes comments indicating sections for outlier detection using graphs and statistics, but the actual code for outlier handling is not provided.
+## 🚀 Installation & Usage
 
-**Data Analysis (placeholder):**
+### Prerequisites
+- Python 3.7+
+- pip package manager
 
-1. The script includes comments for performing univariate and bivariate/multivariate analysis but doesn't contain the actual code.
-2. Univariate analysis would involve exploring individual variables for characteristics like distribution, central tendency, dispersion, and shape.
-3. Bivariate/multivariate analysis would focus on relationships between two or more variables, like correlations, patterns, and trends.
-    - Examples include:
-        - Categorical vs. Categorical (stacked bar chart)
-        - Categorical vs. Numerical (scatter plot, histogram, box plot)
-        - Numerical vs. Numerical (scatter plot, line chart)
-        - Heatmaps for multiple variables
+### Setup Instructions
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Tw-0l/job_postings_SA.git
+   cd job_postings_SA
+   ```
 
-**Missing Code:**
+2. Install required dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- The script includes comments and placeholders for outlier handling and data analysis sections. You'll need to fill in these sections with specific code depending on your desired analysis and chosen methods for handling outliers.
+3. Run the application
+   ```bash
+   streamlit run app.py
+   ```
 
-**Additional Notes:**
+## 📁 Project Structure
+```
+job_postings_SA/
+├── app.py                  # Main Streamlit application
+├── Jadarat_data.csv        # Dataset of job postings
+├── job.jpeg                # Header image
+├── Q1.png                  # Regional distribution visualization
+├── Q3.png                  # Salary visualization
+├── requirements.txt        # Project dependencies
+└── README.md               # Project documentation
+```
 
-- The script incorporates comments to explain the purpose of each code block, improving readability.
-- It demonstrates best practices for data cleaning and exploration.
+## 📈 Data Sources
+The analysis is based on job posting data collected from [Jadarat](https://jadarat.com), a leading job platform in Saudi Arabia. The dataset includes information about job locations, salary ranges, required skills, and more.
+
+## 📞 Contact
+- GitHub: [@Tw-0l](https://github.com/Tw-0l)
+
+---
+
+*This project aims to reduce the stress of job hunting by providing data-driven insights into the Saudi Arabian job market. Remember, finding the right job takes time, but with the right information, you can navigate the process more effectively.*
